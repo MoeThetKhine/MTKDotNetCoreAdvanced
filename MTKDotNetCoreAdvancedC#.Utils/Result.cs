@@ -54,7 +54,7 @@ namespace MTKDotNetCoreAdvancedC_.Utils
 
         #endregion
 
-        #region Fail wth data
+        #region Fail 
 
         public static Result<T> Fail(Exception ex)
         {
