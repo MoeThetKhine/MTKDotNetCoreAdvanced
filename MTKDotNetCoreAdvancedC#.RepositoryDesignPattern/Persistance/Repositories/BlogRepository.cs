@@ -1,4 +1,6 @@
-﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
+﻿using System.Reflection.Metadata;
+
+namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
 
 public class BlogRepository : IBlogRepository
 {
@@ -17,6 +19,7 @@ public class BlogRepository : IBlogRepository
         try
         {
             var query = _context.TblBlogs
+                .Where(x=> x.IsActive == true)
                 .Paginate(pageNo,pageSize);
 
             var lst = await query.Select(x => new BlogModel()
@@ -128,4 +131,34 @@ public class BlogRepository : IBlogRepository
     }
 
     #endregion
+
+    public async Task<Result<BlogModel>> DeleteBlogAsync(int blogId, CancellationToken cs)
+    {
+        Result<BlogModel> result;
+
+        try
+        {
+            var item = await _context.TblBlogs.FirstOrDefaultAsync(x=> x.BlogId == blogId,cs);
+
+            if(item is null)
+            {
+                result = Result<BlogModel>.Fail("No Data Found");
+                return result;
+            }
+
+            item.IsActive = false;
+
+           // _context.TblBlogs.Update(item);
+            await _context.SaveChangesAsync(cs);
+
+            result = Result<BlogModel>.Success();
+        }
+
+        catch(Exception ex)
+        {
+            result = Result<BlogModel>.Fail(ex);
+        }
+        return result;
+    }
+
 }
