@@ -9,8 +9,6 @@ public class BlogRepository : IBlogRepository
         _context = context;
     }
 
-  
-
     #region GetBlogListAsync
 
     public async Task<Result<List<BlogModel>>> GetBlogListAsync(int pageNo, int pageSize, CancellationToken cs)
@@ -67,6 +65,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region CreateBlogAsync
+
     public async Task<Result<BlogResponseModel>> CreateBlogAsync(BlogResponseModel responseModel ,CancellationToken cs)
     {
         Result<BlogResponseModel> result;
@@ -92,5 +92,6 @@ public class BlogRepository : IBlogRepository
         return result;
     }
 
+    #endregion
 
 }
