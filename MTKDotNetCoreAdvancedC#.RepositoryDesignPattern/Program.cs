@@ -1,5 +1,3 @@
-using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
