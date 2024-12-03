@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Database\MTKDotNetCoreAdvancedC#.Database.csproj" />
+    <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Shared\MTKDotNetCoreAdvancedC#.Shared.csproj" />
+    <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Utils\MTKDotNetCoreAdvancedC#.Utils.csproj" />
   </ItemGroup>
 
 </Project>
