@@ -9,6 +9,8 @@ public class BlogRepository : IBlogRepository
         _context = context;
     }
 
+  
+
     #region GetBlogListAsync
 
     public async Task<Result<List<BlogModel>>> GetBlogListAsync(int pageNo, int pageSize, CancellationToken cs)
@@ -64,5 +66,31 @@ public class BlogRepository : IBlogRepository
     }
 
     #endregion
+
+    public async Task<Result<BlogResponseModel>> CreateBlogAsync(BlogResponseModel responseModel ,CancellationToken cs)
+    {
+        Result<BlogResponseModel> result;
+        try
+        {
+            var item = new TblBlog
+            {
+                BlogTitle = responseModel.BlogTitle,
+                BlogAuthor = responseModel.BlogAuthor,
+                BlogContent = responseModel.BlogContent,
+                IsActive = true,
+            };
+
+            await _context.TblBlogs.AddAsync(item,cs);
+            await _context.SaveChangesAsync(cs);
+
+            result = Result<BlogResponseModel>.Success(responseModel);
+        }
+        catch(Exception ex)
+        {
+            result = Result<BlogResponseModel>.Fail(ex);
+        }
+        return result;
+    }
+
 
 }
