@@ -45,6 +45,8 @@ namespace MTKDotNetCoreAdvancedC_.Utils
 
         #endregion
 
+        #region Fail
+
         public static Result<T> Fail(string message = "Fail.",EnumHttpStatusCode statusCode = EnumHttpStatusCode.BadRequest)
         {
             return new Result<T>
@@ -54,6 +56,10 @@ namespace MTKDotNetCoreAdvancedC_.Utils
                 StatusCode = statusCode
             };
         }
+
+        #endregion
+
+
         public static Result<T> Fail(Exception ex)
         {
             return new Result<T>
