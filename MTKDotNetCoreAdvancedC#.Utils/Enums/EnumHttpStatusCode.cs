@@ -1,5 +1,7 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.Utils.Enum;
 
+#region EnumHttpStatusCode
+
 public enum EnumHttpStatusCode
 {
     None,
@@ -9,3 +11,5 @@ public enum EnumHttpStatusCode
     NotFound = 404,
     InternalServerError = 500
 }
+
+#endregion
