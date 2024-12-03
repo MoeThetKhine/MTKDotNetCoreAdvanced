@@ -1,4 +1,6 @@
-﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
+﻿using MTKDotNetCoreAdvancedC_.Shared;
+
+namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
 
 public class BlogRepository : IBlogRepository
 {
@@ -16,7 +18,10 @@ public class BlogRepository : IBlogRepository
         Result<List<BlogModel>> result;
         try
         {
-            var query = _context.TblBlogs.Where(x => x.IsActive == true).Skip(pageNo - 1).Take(pageSize);
+            var query = _context.TblBlogs
+                .Where(x => x.IsActive == true)
+                .Paginate(pageNo,pageSize);
+
             var lst = await query.Select(x => new BlogModel()
             {
                 BlogId = x.BlogId,
@@ -44,7 +49,9 @@ public class BlogRepository : IBlogRepository
     public async Task<Result<List<BlogModel>>> GetBlogListAsyncV1(int pageNo, int pageSize, CancellationToken cs)
     {
         Result<List<BlogModel>> result;
-        var query = _context.TblBlogs.Where(x => x.IsActive == true).Skip(pageNo - 1).Take(pageSize);
+        var query = _context.TblBlogs
+            .Where(x => x.IsActive == true)
+            .Paginate(pageNo, pageSize);
         var lst = await query.Select(x => new BlogModel()
         {
             BlogId = x.BlogId,
