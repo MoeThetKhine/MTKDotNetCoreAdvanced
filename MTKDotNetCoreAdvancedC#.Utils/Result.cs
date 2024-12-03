@@ -1,73 +1,71 @@
-﻿using MTKDotNetCoreAdvancedC_.Utils.Enum;
+﻿
+namespace MTKDotNetCoreAdvancedC_.Utils;
 
-namespace MTKDotNetCoreAdvancedC_.Utils
+#region Result
+
+public class Result<T>
 {
-    #region Result
+    public T Data { get; set; } 
+    public EnumHttpStatusCode StatusCode { get; set; }
+    public string Message { get; set; } 
+    public bool IsSuccess { get; set; }
 
-    public class Result<T>
+    #region Success 
+
+    public static Result<T> Success (string message = "Success")
     {
-        public T Data { get; set; } 
-        public EnumHttpStatusCode StatusCode { get; set; }
-        public string Message { get; set; } 
-        public bool IsSuccess { get; set; }
-
-        #region Success 
-
-        public static Result<T> Success (string message = "Success")
+        return new Result<T>
         {
-            return new Result<T>
-            {
-                Message = message,
-                IsSuccess = true,
-                StatusCode = EnumHttpStatusCode.Success
-            };
-        }
+            Message = message,
+            IsSuccess = true,
+            StatusCode = EnumHttpStatusCode.Success
+        };
+    }
 
-        #endregion
+    #endregion
 
-        #region Success with data
+    #region Success with data
 
-        public static Result<T> Success(T data, string message = "Success")
+    public static Result<T> Success(T data, string message = "Success")
+    {
+        return new Result<T>
         {
-            return new Result<T>
-            {
-                Data = data,
-                Message = message,
-                IsSuccess = true,
-                StatusCode = EnumHttpStatusCode.Success
-            };
-        }
+            Data = data,
+            Message = message,
+            IsSuccess = true,
+            StatusCode = EnumHttpStatusCode.Success
+        };
+    }
 
-        #endregion
+    #endregion
 
-        #region Fail
+    #region Fail
 
-        public static Result<T> Fail(string message = "Fail.",EnumHttpStatusCode statusCode = EnumHttpStatusCode.BadRequest)
+    public static Result<T> Fail(string message = "Fail.",EnumHttpStatusCode statusCode = EnumHttpStatusCode.BadRequest)
+    {
+        return new Result<T>
         {
-            return new Result<T>
-            {
-                Message = message,
-                IsSuccess = false,
-                StatusCode = statusCode
-            };
-        }
+            Message = message,
+            IsSuccess = false,
+            StatusCode = statusCode
+        };
+    }
 
-        #endregion
+    #endregion
 
-        #region Fail 
+    #region Fail 
 
-        public static Result<T> Fail(Exception ex)
+    public static Result<T> Fail(Exception ex)
+    {
+        return new Result<T>
         {
-            return new Result<T>
-            {
-                IsSuccess = false,
-                Message = ex.ToString(),
-                StatusCode = EnumHttpStatusCode.InternalServerError
-            };
-        }
-
-        #endregion
+            IsSuccess = false,
+            Message = ex.ToString(),
+            StatusCode = EnumHttpStatusCode.InternalServerError
+        };
     }
 
     #endregion
 }
+
+#endregion
