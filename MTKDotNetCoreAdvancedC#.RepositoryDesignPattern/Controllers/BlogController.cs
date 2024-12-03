@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
-
+﻿
 namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Controllers
 {
     [Route("api/[controller]")]
