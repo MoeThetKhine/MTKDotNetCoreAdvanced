@@ -29,6 +29,7 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.BlogAuthor).HasMaxLength(50);
             entity.Property(e => e.BlogContent).HasMaxLength(50);
             entity.Property(e => e.BlogTitle).HasMaxLength(50);
+            entity.Property(e => e.IsActive).HasDefaultValue(true);
         });
 
         OnModelCreatingPartial(modelBuilder);
