@@ -36,12 +36,19 @@ public class BlogController : ControllerBase
     #region CreateBlogAsync
 
     [HttpPost]
-    public async Task<IActionResult> CreateBlogAsync([FromBody]BlogResponseModel responseModel,CancellationToken cs)
+    public async Task<IActionResult> CreateBlogAsync([FromForm]BlogResponseModel responseModel,CancellationToken cs)
     {
         var item = await _blogRepository.CreateBlogAsync(responseModel, cs);
         return Ok(item);
     }
 
     #endregion
+
+    [HttpPut("{blogId}")]
+    public async Task<IActionResult> UpdateBlogAsync(int blogId, BlogResponseModel blog,CancellationToken cs)
+    {
+        var item = await _blogRepository.UpdateBlogAsync(blogId, blog, cs);
+        return Ok(item);
+    }
 
 }
