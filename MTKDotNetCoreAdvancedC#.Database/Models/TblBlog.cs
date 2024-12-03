@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MTKDotNetCoreAdvancedC_.Database.Models;
+﻿namespace MTKDotNetCoreAdvancedC_.Database.Models;
 
 public partial class TblBlog
 {
