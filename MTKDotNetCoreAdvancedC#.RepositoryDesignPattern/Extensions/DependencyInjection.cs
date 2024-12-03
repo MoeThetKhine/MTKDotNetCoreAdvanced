@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MTKDotNetCoreAdvancedC_.Database.Models;
-using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Handler;
-using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
-
-namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions
+﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions
 {
     public static class DependencyInjection
     {
