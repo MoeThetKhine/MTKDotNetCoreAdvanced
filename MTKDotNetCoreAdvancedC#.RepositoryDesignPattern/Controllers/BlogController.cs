@@ -26,11 +26,16 @@ namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Controllers
 
         #endregion
 
+        #region GetBlogListAsyncV1
+
         [HttpGet("list-v1")]
         public async Task<IActionResult> GetBlogListAsyncV1(int pageNo, int pageSize, CancellationToken cs)
         {
             var lst = await _blogRepository.GetBlogListAsyncV1(pageNo, pageSize, cs);
             return Ok(lst);
         }
+
+        #endregion
+
     }
 }
