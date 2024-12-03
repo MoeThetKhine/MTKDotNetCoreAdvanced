@@ -92,6 +92,36 @@ public class BlogRepository : IBlogRepository
         return result;
     }
 
+
     #endregion
 
+    public async Task<Result<BlogResponseModel>> UpdateBlogAsync(int blogId, BlogResponseModel blog, CancellationToken cs)
+    {
+        Result<BlogResponseModel> result;
+
+        try
+        {
+            var item = await _context.TblBlogs.FirstOrDefaultAsync(x=> x.BlogId == blogId,cs);
+
+            if(item is null)
+            {
+                result = Result<BlogResponseModel>.Fail("No Data Found");
+                return result;
+            }
+            item.BlogTitle = blog.BlogTitle;
+            item.BlogAuthor = blog.BlogAuthor;
+            item.BlogContent = blog.BlogContent;
+
+            _context.TblBlogs.Update(item);
+            await _context.SaveChangesAsync(cs);
+
+            result = Result<BlogResponseModel>.Success(blog);
+        }
+        catch(Exception ex)
+        {
+            result = Result<BlogResponseModel>.Fail(ex);
+        }
+
+        return result;
+    }
 }
