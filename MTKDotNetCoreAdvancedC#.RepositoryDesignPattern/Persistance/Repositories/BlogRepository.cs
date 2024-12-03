@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
+﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
 
 public class BlogRepository : IBlogRepository
 {
@@ -132,6 +130,8 @@ public class BlogRepository : IBlogRepository
 
     #endregion
 
+    #region DeleteBlogAsync
+
     public async Task<Result<BlogModel>> DeleteBlogAsync(int blogId, CancellationToken cs)
     {
         Result<BlogModel> result;
@@ -160,5 +160,7 @@ public class BlogRepository : IBlogRepository
         }
         return result;
     }
+
+    #endregion
 
 }
