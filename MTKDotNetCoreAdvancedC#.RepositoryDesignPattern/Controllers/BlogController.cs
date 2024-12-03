@@ -55,11 +55,15 @@ public class BlogController : ControllerBase
 
     #endregion
 
+    #region DeleteBlogAsync
+
     [HttpDelete("{blogId}")]
-    public async Task<IActionResult> DeleteBlog(int blogId,CancellationToken cs)
+    public async Task<IActionResult> DeleteBlogAsync(int blogId,CancellationToken cs)
     {
         var item = await _blogRepository.DeleteBlogAsync(blogId, cs);
         return Ok(item);
     }
+
+    #endregion
 
 }
