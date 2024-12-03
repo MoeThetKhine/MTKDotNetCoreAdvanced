@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MTKDotNetCoreAdvancedC_.Database.Models;
+using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Handler;
 using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
 
 namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions
@@ -9,17 +10,21 @@ namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions
 
         #region AddDependencies
 
-        public static IServiceCollection AddDependencies(this IServiceCollection services,WebApplicationBuilder builder) 
+        public static IServiceCollection AddDependencies(this IServiceCollection services, WebApplicationBuilder builder)
         {
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
-            services.AddScoped<IBlogRepository,BlogRepository>();
+
+            services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddControllers().AddJsonOptions(opt =>
             {
                 opt.JsonSerializerOptions.PropertyNamingPolicy = null;
             });
+
+            builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+            builder.Services.AddProblemDetails();
 
             return services;
         }
