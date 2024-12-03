@@ -14,6 +14,8 @@ namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositori
             _context = context;
         }
 
+        #region GetBlogListAsync
+
         public async Task<Result<List<BlogModel>>> GetBlogListAsync(int pageNo, int pageSize, CancellationToken cs)
         {
             Result<List<BlogModel>> result;
@@ -39,5 +41,30 @@ namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositori
             }
             return result;
         }
+
+        #endregion
+
+        #region GetBlogListAsyncV1
+
+        public async Task<Result<List<BlogModel>>> GetBlogListAsyncV1(int pageNo, int pageSize, CancellationToken cs)
+        {
+            Result<List<BlogModel>> result;
+            var query = _context.TblBlogs.Where(x => x.IsActive == true).Skip(pageNo - 1).Take(pageSize);
+            var lst = await query.Select(x => new BlogModel()
+            {
+                BlogId = x.BlogId,
+                BlogTitle = x.BlogTitle,
+                BlogAuthor = x.BlogAuthor,
+                BlogContent = x.BlogContent,
+                IsActive = true
+
+            }).ToListAsync(cs);
+
+            result = Result<List<BlogModel>>.Success(lst);
+
+            return result;
+        }
+
+        #endregion
     }
 }
