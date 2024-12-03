@@ -21,5 +21,11 @@ namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Controllers
             var lst = await _blogRepository.GetBlogListAsync(pageNo, pageSize, cs);
             return Ok(lst);
         }
+        [HttpGet]
+        public async Task<IActionResult> GetBlogListAsyncV1(int pageNo, int pageSize, CancellationToken cs)
+        {
+            var lst = await _blogRepository.GetBlogListAsyncV1(pageNo, pageSize, cs);
+            return Ok(lst);
+        }
     }
 }
