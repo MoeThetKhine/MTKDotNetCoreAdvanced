@@ -10,7 +10,6 @@ public class BlogResponseModel
 
     public string BlogContent { get; set; } = null!;
 
-    public bool IsActive { get; set; }
 }
 
 #endregion
