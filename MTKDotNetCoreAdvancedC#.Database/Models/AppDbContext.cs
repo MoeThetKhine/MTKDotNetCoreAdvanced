@@ -22,9 +22,8 @@ public partial class AppDbContext : DbContext
     {
         modelBuilder.Entity<TblBlog>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Tbl_blog");
+            entity.HasKey(e => e.BlogId); 
+            entity.ToTable("Tbl_blog");
 
             entity.Property(e => e.BlogAuthor).HasMaxLength(50);
             entity.Property(e => e.BlogContent).HasMaxLength(50);
