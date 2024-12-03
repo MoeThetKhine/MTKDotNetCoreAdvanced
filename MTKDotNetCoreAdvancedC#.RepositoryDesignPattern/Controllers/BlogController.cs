@@ -44,11 +44,15 @@ public class BlogController : ControllerBase
 
     #endregion
 
+    #region UpdateBlogAsync
+
     [HttpPut("{blogId}")]
     public async Task<IActionResult> UpdateBlogAsync(int blogId, BlogResponseModel blog,CancellationToken cs)
     {
         var item = await _blogRepository.UpdateBlogAsync(blogId, blog, cs);
         return Ok(item);
     }
+
+    #endregion
 
 }
