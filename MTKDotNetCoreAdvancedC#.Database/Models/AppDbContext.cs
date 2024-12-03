@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace MTKDotNetCoreAdvancedC_.Database.Models;
+﻿namespace MTKDotNetCoreAdvancedC_.Database.Models;
 
 public partial class AppDbContext : DbContext
 {
@@ -18,6 +16,8 @@ public partial class AppDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=.;Database=AdvancedC#;User Id=sa;Password=sasa@123;TrustServerCertificate=True;");
 
+    #region OnModelCreating
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<TblBlog>(entity =>
@@ -33,6 +33,8 @@ public partial class AppDbContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
+
+    #endregion
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
