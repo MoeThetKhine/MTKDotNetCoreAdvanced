@@ -1,6 +1,4 @@
-﻿using MTKDotNetCoreAdvancedC_.Shared;
-
-namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
+﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories;
 
 public class BlogRepository : IBlogRepository
 {

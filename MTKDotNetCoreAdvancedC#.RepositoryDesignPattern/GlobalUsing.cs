@@ -8,3 +8,4 @@ global using MTKDotNetCoreAdvancedC_.Utils;
 global using MTKDotNetCoreAdvancedC_.Utils.Enum;
 global using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions;
 global using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Models;
+global using MTKDotNetCoreAdvancedC_.Shared;
