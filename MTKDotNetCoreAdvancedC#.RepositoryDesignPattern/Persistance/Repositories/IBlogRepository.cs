@@ -1,7 +1,4 @@
-﻿using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Models;
-using MTKDotNetCoreAdvancedC_.Utils;
-
-namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories
+﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Persistance.Repositories
 {
     public interface IBlogRepository
     {
