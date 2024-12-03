@@ -1,9 +1,13 @@
+using MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDependencies(builder);
 
 var app = builder.Build();
 
