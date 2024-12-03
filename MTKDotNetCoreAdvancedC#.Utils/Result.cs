@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 
 namespace MTKDotNetCoreAdvancedC_.Utils
 {
+    #region Result
+
     public class Result<T>
     {
         public T Data { get; set; } 
         public EnumHttpStatusCode StatusCode { get; set; }
         public string Message { get; set; } 
         public bool IsSuccess { get; set; }
+
+        #region Success 
 
         public static Result<T> Success (string message = "Success")
         {
@@ -23,6 +27,11 @@ namespace MTKDotNetCoreAdvancedC_.Utils
                 StatusCode = EnumHttpStatusCode.Success
             };
         }
+
+        #endregion
+
+        #region Success with data
+
         public static Result<T> Success(T data, string message = "Success")
         {
             return new Result<T>
@@ -33,6 +42,9 @@ namespace MTKDotNetCoreAdvancedC_.Utils
                 StatusCode = EnumHttpStatusCode.Success
             };
         }
+
+        #endregion
+
         public static Result<T> Fail(string message = "Fail.",EnumHttpStatusCode statusCode = EnumHttpStatusCode.BadRequest)
         {
             return new Result<T>
@@ -52,4 +64,6 @@ namespace MTKDotNetCoreAdvancedC_.Utils
             };
         }
     }
+
+    #endregion
 }
