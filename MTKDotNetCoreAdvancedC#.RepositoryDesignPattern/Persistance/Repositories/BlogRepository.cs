@@ -17,7 +17,6 @@ public class BlogRepository : IBlogRepository
         try
         {
             var query = _context.TblBlogs
-                .Where(x => x.IsActive == true)
                 .Paginate(pageNo,pageSize);
 
             var lst = await query.Select(x => new BlogModel()
@@ -48,7 +47,6 @@ public class BlogRepository : IBlogRepository
     {
         Result<List<BlogModel>> result;
         var query = _context.TblBlogs
-            .Where(x => x.IsActive == true)
             .Paginate(pageNo, pageSize);
         var lst = await query.Select(x => new BlogModel()
         {
