@@ -59,6 +59,7 @@ namespace MTKDotNetCoreAdvancedC_.Utils
 
         #endregion
 
+        #region Fail wth data
 
         public static Result<T> Fail(Exception ex)
         {
@@ -69,6 +70,8 @@ namespace MTKDotNetCoreAdvancedC_.Utils
                 StatusCode = EnumHttpStatusCode.InternalServerError
             };
         }
+
+        #endregion
     }
 
     #endregion
