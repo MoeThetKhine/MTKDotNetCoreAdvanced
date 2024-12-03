@@ -1,5 +1,4 @@
-﻿
-namespace MTKDotNetCoreAdvancedC_.Utils;
+﻿namespace MTKDotNetCoreAdvancedC_.Utils;
 
 #region Result
 
