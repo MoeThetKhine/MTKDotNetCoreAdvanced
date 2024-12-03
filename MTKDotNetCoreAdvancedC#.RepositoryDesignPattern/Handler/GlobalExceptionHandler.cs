@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
-using MTKDotNetCoreAdvancedC_.Utils;
-using MTKDotNetCoreAdvancedC_.Utils.Enum;
-
-namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Handler
+﻿namespace MTKDotNetCoreAdvancedC_.RepositoryDesignPattern.Handler
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {
