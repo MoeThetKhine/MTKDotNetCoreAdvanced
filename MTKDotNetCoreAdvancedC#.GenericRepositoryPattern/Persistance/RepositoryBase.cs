@@ -81,10 +81,16 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
         }
 
         #endregion
+
+        #region Query
+
         public IQueryable<T> Query(Expression <Func<T, bool>>? expression = null)
         {
             return expression is null ? _dbSet.AsQueryable() : _dbSet.Where(expression);
         }
+
+        #endregion
+
         public void SaveChanges()
         {
             _context.SaveChanges();
