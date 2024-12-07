@@ -2,6 +2,9 @@
 
 public static class DependencyInjectionExtension
 {
+
+    #region DependencyInjectionExtension
+
     public static IServiceCollection AddDependencies(this IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(opt =>
@@ -18,4 +21,6 @@ public static class DependencyInjectionExtension
 
         return services;
     }
+
+    #endregion
 }
