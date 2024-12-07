@@ -14,7 +14,7 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers
             _blogRepository = blogRepository;
         }
 
-
+        #region GetBlogAsync
 
         [HttpGet]
         public async Task<IActionResult> GetBlogAsync(int pageNo, int pageSize,CancellationToken cs)
@@ -24,5 +24,7 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers
 
             return Ok(lst);
         }
+
+        #endregion
     }
 }
