@@ -56,18 +56,31 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
 
         #endregion
 
+        #region Delete
+
         public void Delete(T entity)
         {
             _dbSet.Remove(entity);
         }
+
+        #endregion
+
+        #region DeleteRange
         public void DeleteRange(IEnumerable<T> entities)
         {
             _dbSet.RemoveRange(entities);
         }
+
+        #endregion
+
+        #region Dispose
+
         public void Dispose()
         {
             _context.Dispose(); 
         }
+
+        #endregion
         public IQueryable<T> Query(Expression <Func<T, bool>>? expression = null)
         {
             return expression is null ? _dbSet.AsQueryable() : _dbSet.Where(expression);
