@@ -1,6 +1,4 @@
-﻿using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance.Repository;
-
-namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Dependencies;
+﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Dependencies;
 
 public static class DependencyInjectionExtension
 {
