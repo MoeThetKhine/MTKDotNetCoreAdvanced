@@ -1,24 +1,23 @@
 ﻿using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance.Repository;
 
-namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Dependencies
+namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Dependencies;
+
+public static class DependencyInjectionExtension
 {
-    public static class DependencyInjectionExtension
+    public static IServiceCollection AddDependencies(this IServiceCollection services)
     {
-        public static IServiceCollection AddDependencies(this IServiceCollection services)
+        services.AddDbContext<AppDbContext>(opt =>
         {
-            services.AddDbContext<AppDbContext>(opt =>
-            {
-                opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-            });
+            opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        });
 
-            services.AddControllers().AddJsonOptions(opt =>
-            {
-                opt.JsonSerializerOptions.PropertyNamingPolicy = null;
-            });
+        services.AddControllers().AddJsonOptions(opt =>
+        {
+            opt.JsonSerializerOptions.PropertyNamingPolicy = null;
+        });
 
-            services.AddScoped<IBlogRepository, BlogRepository>();
+        services.AddScoped<IBlogRepository, BlogRepository>();
 
-            return services;
-        }
+        return services;
     }
 }
