@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MTKDotNetCoreAdvancedC_.Shared;
-
-namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers
+﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
