@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MTKDotNetCoreAdvancedC_.Database.Models;
-using System.Linq.Expressions;
-
-namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance;
+﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance;
 
 public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 {
