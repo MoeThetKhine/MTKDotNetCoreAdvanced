@@ -20,10 +20,14 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
         //    _dbSet = dbSet;
         //}
 
+        #region Add
+
         public void Add(T entity)
         {
             _dbSet.Add(entity);
         }
+
+        #endregion
 
         public async Task AddAsync(T entiry,CancellationToken cs = default)
         {
