@@ -117,10 +117,15 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
         }
 
         #endregion
+
+        #region UpdateRange
+
         public void UpdateRange(IEnumerable<T> entities)
         {
             _dbSet.UpdateRange(entities);
         }
+
+        #endregion
 
     }
 }
