@@ -99,10 +99,15 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
         }
 
         #endregion
+
+        #region SaveChangesAsync
+
         public async Task SaveChangesAsync(CancellationToken cs = default)
         {
             await _context.SaveChangesAsync(cs);    
         }
+
+        #endregion
         public void Update(T entity)
         {
             _dbSet.Update(entity);
