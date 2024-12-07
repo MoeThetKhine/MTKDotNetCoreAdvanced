@@ -1,6 +1,4 @@
-﻿using MTKDotNetCoreAdvancedC_.Database.Models;
-
-namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance.Repository;
+﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance.Repository;
 
 public class BlogRepository : RepositoryBase<TblBlog>, IBlogRepository
 {
