@@ -14,6 +14,7 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
         _context = context;
         _dbSet =  context.Set<T>();
     }
+
     //public RepositoryBase(AppDbContext context, DbSet<T> dbSet)
     //{
     //    _context = context;
