@@ -1,0 +1,6 @@
+@MTKDotNetCoreAdvancedC_.GenericRepositoryPattern_HostAddress = http://localhost:5042
+
+GET {{MTKDotNetCoreAdvancedC_.GenericRepositoryPattern_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
