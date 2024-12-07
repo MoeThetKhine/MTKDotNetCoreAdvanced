@@ -37,10 +37,15 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
         }
 
         #endregion
+
+        #region AddRange
+
         public void AddRange(IEnumerable<T> entities)
         {
             _dbSet.AddRange(entities);
         }
+
+        #endregion
         public async Task AddRangeAsync(IEnumerable<T> entities,CancellationToken cs)
         {
             await _dbSet.AddRangeAsync(entities,cs);
