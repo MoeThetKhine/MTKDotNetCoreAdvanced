@@ -16,5 +16,6 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
         void Dispose();
         Task SaveChangesAsync(CancellationToken cs = default);
         void SaveChanges();
+
     }
 }
