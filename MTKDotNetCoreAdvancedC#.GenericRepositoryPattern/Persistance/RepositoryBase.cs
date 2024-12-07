@@ -91,10 +91,14 @@ namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance
 
         #endregion
 
+        #region SaveChanges
+
         public void SaveChanges()
         {
             _context.SaveChanges();
         }
+
+        #endregion
         public async Task SaveChangesAsync(CancellationToken cs = default)
         {
             await _context.SaveChangesAsync(cs);    
