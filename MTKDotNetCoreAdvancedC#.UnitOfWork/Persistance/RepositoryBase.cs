@@ -11,10 +11,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
         _dbSet = context.Set<T>();
     }
 
+    #region Add
+
     public void Add(T entity)
     {
         _dbSet.Add(entity);
     }
+
+    #endregion
 
     public async Task AddAsync(T entity, CancellationToken cs = default)
     {
