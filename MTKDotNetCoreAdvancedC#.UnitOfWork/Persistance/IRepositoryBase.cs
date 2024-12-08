@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-
-namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance;
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance;
 
 public interface IRepositoryBase<T> where T : class
 {
