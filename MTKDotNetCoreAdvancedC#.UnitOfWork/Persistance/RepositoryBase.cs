@@ -83,10 +83,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region SaveChanges
+
     public void SaveChanges()
     {
         _context.SaveChanges();
     }
+
+    #endregion
 
     public async Task SaveChangesAsync(CancellationToken cs = default)
     {
