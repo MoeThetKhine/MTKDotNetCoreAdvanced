@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>MTKDotNetCoreAdvancedC_.UnitOfWork</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Database\MTKDotNetCoreAdvancedC#.Database.csproj" />
+    <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Shared\MTKDotNetCoreAdvancedC#.Shared.csproj" />
+    <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Utils\MTKDotNetCoreAdvancedC#.Utils.csproj" />
+  </ItemGroup>
+
+</Project>
