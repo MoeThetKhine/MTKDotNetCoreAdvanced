@@ -1,8 +1,7 @@
-﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance.Repositories
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance.Repositories;
+
+public class BlogRepository : RepositoryBase<TblBlog>, IBlogRepository
 {
-    public class BlogRepository : RepositoryBase<TblBlog>, IBlogRepository
-    {
-        public BlogRepository(AppDbContext context)
-            : base(context) { }
-    }
+    public BlogRepository(AppDbContext context)
+        : base(context) { }
 }
