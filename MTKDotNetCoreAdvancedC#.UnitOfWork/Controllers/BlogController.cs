@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MTKDotNetCoreAdvancedC_.Shared;
-using MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance;
-
-namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,6 +11,7 @@ namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers
             _unitOfWork = unitOfWork;
         }
 
+        #region GetBlogsAsync
 
         [HttpGet]
         public async Task<IActionResult> GetBlogsAsync(int pageNo, int pageSize, CancellationToken cs)
@@ -24,5 +21,7 @@ namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers
 
             return Ok(lst);
         }
+
+        #endregion
     }
 }
