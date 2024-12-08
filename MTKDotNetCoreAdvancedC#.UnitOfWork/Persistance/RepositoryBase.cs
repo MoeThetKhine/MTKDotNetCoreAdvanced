@@ -101,10 +101,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region Update
+
     public void Update(T entity)
     {
         _dbSet.Update(entity);
     }
+
+    #endregion
 
     public void UpdateRange(IEnumerable<T> entities)
     {
