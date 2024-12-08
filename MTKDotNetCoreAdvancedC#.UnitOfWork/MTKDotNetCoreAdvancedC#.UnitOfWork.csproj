@@ -17,8 +17,4 @@
     <ProjectReference Include="..\MTKDotNetCoreAdvancedC#.Utils\MTKDotNetCoreAdvancedC#.Utils.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
