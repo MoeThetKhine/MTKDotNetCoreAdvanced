@@ -74,10 +74,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region Query
+
     public IQueryable<T> Query(Expression<Func<T, bool>>? expression = null)
     {
         return expression is null ? _dbSet.AsQueryable() : _dbSet.Where(expression);
     }
+
+    #endregion
 
     public void SaveChanges()
     {
