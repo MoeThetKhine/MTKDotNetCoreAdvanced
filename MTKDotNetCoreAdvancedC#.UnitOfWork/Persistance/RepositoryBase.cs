@@ -92,10 +92,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region SaveChangesAsync
+
     public async Task SaveChangesAsync(CancellationToken cs = default)
     {
         await _context.SaveChangesAsync(cs);
     }
+
+    #endregion
 
     public void Update(T entity)
     {
