@@ -29,10 +29,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region AddRange
+
     public void AddRange(IEnumerable<T> entities)
     {
         _dbSet.AddRange(entities);
     }
+
+    #endregion
 
     public async Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cs)
     {
