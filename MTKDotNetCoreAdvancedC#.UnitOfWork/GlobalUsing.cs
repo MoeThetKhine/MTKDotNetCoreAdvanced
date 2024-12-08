@@ -5,4 +5,6 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.AspNetCore.Mvc;
 global using MTKDotNetCoreAdvancedC_.Shared;
 global using MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance;
+global using MTKDotNetCoreAdvancedC_.UnitOfWork.Dependencies;
+
 
