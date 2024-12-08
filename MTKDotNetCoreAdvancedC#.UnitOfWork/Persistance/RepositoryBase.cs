@@ -65,10 +65,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region Dispose
+
     public void Dispose()
     {
         _context.Dispose();
     }
+
+    #endregion
 
     public IQueryable<T> Query(Expression<Func<T, bool>>? expression = null)
     {
