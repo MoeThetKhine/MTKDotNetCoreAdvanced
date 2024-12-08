@@ -1,7 +1,6 @@
-﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance;
+
+public interface IUnitOfWork
 {
-    public interface IUnitOfWork
-    {
-        IBlogRepository BlogRepository { get; }
-    }
+    IBlogRepository BlogRepository { get; }
 }
