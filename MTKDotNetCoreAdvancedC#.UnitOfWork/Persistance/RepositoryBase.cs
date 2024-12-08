@@ -20,10 +20,14 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
 
     #endregion
 
+    #region AddAsync
+
     public async Task AddAsync(T entity, CancellationToken cs = default)
     {
         await _dbSet.AddAsync(entity, cs);
     }
+
+    #endregion
 
     public void AddRange(IEnumerable<T> entities)
     {
