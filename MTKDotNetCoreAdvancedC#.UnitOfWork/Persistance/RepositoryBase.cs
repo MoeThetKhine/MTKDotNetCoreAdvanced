@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MTKDotNetCoreAdvancedC_.Database.Models;
-
-namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
