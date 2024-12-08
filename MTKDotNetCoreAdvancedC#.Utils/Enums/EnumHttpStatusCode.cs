@@ -4,6 +4,7 @@
 
 public enum EnumHttpStatusCode
 {
+
     None,
     Success = 200,
     BadRequest = 400,
