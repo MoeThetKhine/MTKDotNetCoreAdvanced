@@ -1,5 +1,7 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Persistance;
 
+#region IRepositoryBase
+
 public interface IRepositoryBase<T> where T : class
 {
     IQueryable<T> Query(Expression<Func<T, bool>>? expression = null);
@@ -15,3 +17,5 @@ public interface IRepositoryBase<T> where T : class
     Task SaveChangesAsync(CancellationToken cs = default);
     void SaveChanges();
 }
+
+#endregion
