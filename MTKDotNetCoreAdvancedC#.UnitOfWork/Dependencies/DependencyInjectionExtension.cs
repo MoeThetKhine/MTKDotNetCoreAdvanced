@@ -17,7 +17,7 @@ public static class DependencyInjectionExtension
             opt.JsonSerializerOptions.PropertyNamingPolicy = null;
         });
 
-        services.AddScoped<IBlogRepository, BlogRepository>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }
