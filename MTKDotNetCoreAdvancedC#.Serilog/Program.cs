@@ -8,10 +8,6 @@ Log.Logger = new LoggerConfiguration()
         rollingInterval: RollingInterval.Minute
     )
     .WriteTo.Console(new ExpressionTemplate("[{@t:HH:mm:ss} {@l:u3} {SourceContext}] {@m}\n{@x}"))
-    //      .WriteTo
-    //.MSSqlServer(
-    //    connectionString: builder.Configuration.GetConnectionString("DbConnection"),
-    //    sinkOptions: new MSSqlServerSinkOptions { TableName = "Tbl_Logs", AutoCreateSqlTable = true })
     .CreateLogger();
 
 builder.Host.UseSerilog();
