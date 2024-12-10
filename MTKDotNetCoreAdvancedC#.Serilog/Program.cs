@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+#region Serilog
+
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Debug()
     .WriteTo.File(
@@ -9,6 +11,8 @@ Log.Logger = new LoggerConfiguration()
     )
     .WriteTo.Console(new ExpressionTemplate("[{@t:HH:mm:ss} {@l:u3} {SourceContext}] {@m}\n{@x}"))
     .CreateLogger();
+
+#endregion
 
 builder.Host.UseSerilog();
 
