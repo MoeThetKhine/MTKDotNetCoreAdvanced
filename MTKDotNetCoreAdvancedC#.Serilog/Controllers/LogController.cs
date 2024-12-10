@@ -11,10 +11,15 @@ public class LogController : ControllerBase
         _logger = logger;
     }
 
+    #region Test
+
     [HttpGet]
     public IActionResult Test()
     {
         _logger.LogInformation("Hello!");
         return Ok();
     }
+
+    #endregion
+
 }
