@@ -1,21 +1,20 @@
-﻿namespace MTKDotNetCoreAdvancedC_.Serilog.Controllers
+﻿namespace MTKDotNetCoreAdvancedC_.Serilog.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class LogController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class LogController : ControllerBase
+    ILogger<LogController> _logger;
+
+    public LogController(ILogger<LogController> logger)
     {
-        ILogger<LogController> _logger;
+        _logger = logger;
+    }
 
-        public LogController(ILogger<LogController> logger)
-        {
-            _logger = logger;
-        }
-
-        [HttpGet]
-        public IActionResult Test()
-        {
-            _logger.LogInformation("Hello!");
-            return Ok();
-        }
+    [HttpGet]
+    public IActionResult Test()
+    {
+        _logger.LogInformation("Hello!");
+        return Ok();
     }
 }
