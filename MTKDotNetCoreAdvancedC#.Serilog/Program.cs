@@ -1,7 +1,3 @@
-using Serilog;
-using Serilog.Formatting.Compact;
-using Serilog.Templates;
-
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
