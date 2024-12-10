@@ -6,5 +6,18 @@ namespace MTKDotNetCoreAdvancedC_.Serilog.Controllers
     [ApiController]
     public class LogController : ControllerBase
     {
+        ILogger<LogController> _logger;
+
+        public LogController(ILogger<LogController> logger)
+        {
+            _logger = logger;
+        }
+
+        [HttpGet]
+        public IActionResult Test()
+        {
+            _logger.LogInformation("Hello!");
+            return Ok();
+        }
     }
 }
