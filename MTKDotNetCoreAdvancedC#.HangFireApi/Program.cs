@@ -35,6 +35,10 @@ app.MapControllers();
 
 //BackgroundJob.Enqueue(() => Console.WriteLine("Fire and Forget Job"));
 
-BackgroundJob.Schedule(() => Console.WriteLine("Delay Job Sample!"),TimeSpan.FromSeconds(5));
+//BackgroundJob.Schedule(() => Console.WriteLine("Delay Job Sample!"),TimeSpan.FromSeconds(5));
+
+var  jobId = Guid.NewGuid().ToString();
+RecurringJob.AddOrUpdate(jobId,() => Console.WriteLine("Recuring Job"), Cron.Daily);
+
 
 app.Run();
