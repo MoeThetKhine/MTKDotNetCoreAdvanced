@@ -37,8 +37,8 @@ app.MapControllers();
 
 //BackgroundJob.Schedule(() => Console.WriteLine("Delay Job Sample!"),TimeSpan.FromSeconds(5));
 
-var  jobId = Guid.NewGuid().ToString();
-RecurringJob.AddOrUpdate(jobId,() => Console.WriteLine("Recuring Job"), Cron.Daily);
+//var  jobId = Guid.NewGuid().ToString();
+//RecurringJob.AddOrUpdate(jobId,() => Console.WriteLine("Recuring Job"), Cron.Daily);
 
 
 app.Run();
