@@ -33,4 +33,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+BackgroundJob.Enqueue(() => Console.WriteLine("Fire and Forget Job"));
+
 app.Run();
