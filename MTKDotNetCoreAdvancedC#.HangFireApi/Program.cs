@@ -27,12 +27,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseHangfireDashboard();
+app.UseHangfireDashboard("/hangfire");
 
 app.UseAuthorization();
 
 app.MapControllers();
 
-BackgroundJob.Enqueue(() => Console.WriteLine("Fire and Forget Job"));
+//BackgroundJob.Enqueue(() => Console.WriteLine("Fire and Forget Job"));
+
+BackgroundJob.Schedule(() => Console.WriteLine("Delay Job Sample!"),TimeSpan.FromSeconds(5));
 
 app.Run();
