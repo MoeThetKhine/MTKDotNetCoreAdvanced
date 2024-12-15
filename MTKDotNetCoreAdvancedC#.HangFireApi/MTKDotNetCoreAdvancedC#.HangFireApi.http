@@ -1,0 +1,6 @@
+@MTKDotNetCoreAdvancedC_.HangFireApi_HostAddress = http://localhost:5198
+
+GET {{MTKDotNetCoreAdvancedC_.HangFireApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
