@@ -1,5 +1,4 @@
-﻿using RestSharp;
-
+﻿
 namespace MTKDotNetCoreAdvancedC_.RestClient
 {
     public class Program
