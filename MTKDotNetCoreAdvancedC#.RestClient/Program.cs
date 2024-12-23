@@ -21,6 +21,8 @@ namespace MTKDotNetCoreAdvancedC_.RestClient
         }
     }
 
+    #region RestClientExample
+
     public class RestClientExample
     {
         public async Task<T> GetAsync<T>(string url, string endpoint)
@@ -32,4 +34,6 @@ namespace MTKDotNetCoreAdvancedC_.RestClient
             return lst!;
         }
     }
+
+    #endregion
 }
