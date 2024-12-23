@@ -1,5 +1,7 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.RestClient;
 
+#region BlogRequestModel
+
 public class BlogRequestModel
 {
     public string BlogTitle { get; set; } = null!;
@@ -10,3 +12,5 @@ public class BlogRequestModel
 
     public bool? IsDeleted { get; set; }
 }
+
+#endregion
