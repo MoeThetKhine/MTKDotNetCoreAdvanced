@@ -2,6 +2,9 @@
 
 public class RestClientService
 {
+
+    #region ExecuteAsync
+
     public async Task<T> ExecuteAsync<T>(string endpoint, EnumHttpMethod httpMethod, object? requestModel = null)
     {
         RestSharp.RestClient client = new("");
@@ -42,4 +45,6 @@ public class RestClientService
         string jsonResponse = response!.Content!;
         return JsonConvert.DeserializeObject<T>(jsonResponse)!;
     }
+
+    #endregion
 }
