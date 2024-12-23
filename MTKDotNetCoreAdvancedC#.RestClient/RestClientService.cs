@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using RestSharp;
-
-namespace MTKDotNetCoreAdvancedC_.RestClient
+﻿namespace MTKDotNetCoreAdvancedC_.RestClient
 {
     public class RestClientService
     {
