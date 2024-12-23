@@ -38,6 +38,10 @@ app.MapControllers();
 //var jobId = Guid.NewGuid().ToString();
 //RecurringJob.AddOrUpdate(jobId,() => Console.WriteLine("Recuring Job"), Cron.Daily);
 
+RecurringJob.AddOrUpdate(
+    "LastDayMessageJob",
+    () => Console.WriteLine("This is your monthly message!"),
+    "59 23 L * *" );
 
 
 app.Run();
