@@ -1,6 +1,6 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.RestClient
 {
-    internal class RestClientService
+    public class RestClientService
     {
     }
 }
