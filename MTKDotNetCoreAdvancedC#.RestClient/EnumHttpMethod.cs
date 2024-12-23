@@ -1,11 +1,10 @@
-﻿namespace MTKDotNetCoreAdvancedC_.RestClient
+﻿namespace MTKDotNetCoreAdvancedC_.RestClient;
+
+public enum EnumHttpMethod
 {
-    public enum EnumHttpMethod
-    {
-        GET,
-        POST,
-        PUT,
-        PATCH,
-        DELETE,
-    }
+    GET,
+    POST,
+    PUT,
+    PATCH,
+    DELETE,
 }
