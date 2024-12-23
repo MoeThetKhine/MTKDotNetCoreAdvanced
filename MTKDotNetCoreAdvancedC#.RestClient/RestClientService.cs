@@ -13,7 +13,10 @@ public class RestClientService
             string jsonStr = JsonConvert.SerializeObject(requestModel);
             request.AddJsonBody(jsonStr);
         }
-        switch(httpMethod)
+
+        #region HttpMethod
+
+        switch (httpMethod)
         {
             case EnumHttpMethod.GET:
                 response = await client.GetAsync(request);
@@ -33,6 +36,9 @@ public class RestClientService
             default:
                 break;
         }
+
+        #endregion
+
         string jsonResponse = response!.Content!;
         return JsonConvert.DeserializeObject<T>(jsonResponse)!;
     }
