@@ -1,5 +1,7 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.RestClient;
 
+#region EnumHttpMethod
+
 public enum EnumHttpMethod
 {
     GET,
@@ -8,3 +10,5 @@ public enum EnumHttpMethod
     PATCH,
     DELETE,
 }
+
+#endregion
