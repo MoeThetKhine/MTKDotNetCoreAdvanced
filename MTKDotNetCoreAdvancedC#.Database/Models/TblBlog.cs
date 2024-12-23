@@ -1,5 +1,7 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.Database.Models;
 
+#region EnumHttpMethod
+
 public partial class TblBlog
 {
     public long BlogId { get; set; }
@@ -12,3 +14,5 @@ public partial class TblBlog
 
     public bool IsActive { get; set; }
 }
+
+#endregion
