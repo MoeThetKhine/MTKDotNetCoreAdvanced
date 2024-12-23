@@ -13,8 +13,12 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<TblBlog> TblBlogs { get; set; }
 
+    #region Connection String
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=.;Database=AdvancedC#;User Id=sa;Password=sasa@123;TrustServerCertificate=True;");
+
+    #endregion
 
     #region OnModelCreating
 
