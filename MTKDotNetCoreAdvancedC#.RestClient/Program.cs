@@ -22,5 +22,15 @@ namespace MTKDotNetCoreAdvancedC_.RestClient
         }
     }
 
-   
+    public class RestClientExample
+    {
+        public async Task<T> GetAsync<T>(string url, string endpoint)
+        {
+            RestSharp.RestClient client = new(url);
+            RestRequest request = new(endpoint);
+            var lst = await client.GetAsync<T>(request);
+
+            return lst!;
+        }
+    }
 }
