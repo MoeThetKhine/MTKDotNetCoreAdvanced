@@ -23,4 +23,19 @@ public class BlogController : ControllerBase
     }
 
     #endregion
+
+   
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetBlogByIdAsync(int id, CancellationToken cs)
+    {
+        var blog = await _blogRepository.Query(b => b.BlogId == id).FirstOrDefaultAsync(cs);
+        if (blog is null)
+        {
+            return NotFound();
+        }
+        return Ok(blog);
+    }
+
+ 
 }
