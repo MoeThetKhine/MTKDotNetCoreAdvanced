@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNetCoreAdvancedC#.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNetCoreAdvancedC#.HangFireApi", "MTKDotNetCoreAdvancedC#.HangFireApi\MTKDotNetCoreAdvancedC#.HangFireApi.csproj", "{0D93EFE5-57C5-4793-AA64-C2E76DDDDFBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTKDotNetCoreAdvancedC#.RestClient", "MTKDotNetCoreAdvancedC#.RestClient\MTKDotNetCoreAdvancedC#.RestClient.csproj", "{8C7BE2ED-5F9F-4EBC-98C9-83E91DF14CAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MTKDotNetCoreAdvancedC#.RestClient", "MTKDotNetCoreAdvancedC#.RestClient\MTKDotNetCoreAdvancedC#.RestClient.csproj", "{8C7BE2ED-5F9F-4EBC-98C9-83E91DF14CAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
