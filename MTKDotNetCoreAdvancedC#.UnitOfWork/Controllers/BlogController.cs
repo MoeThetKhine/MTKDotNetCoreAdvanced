@@ -42,7 +42,4 @@ public class BlogController : ControllerBase
 
     #endregion
 
-
-
-
 }
