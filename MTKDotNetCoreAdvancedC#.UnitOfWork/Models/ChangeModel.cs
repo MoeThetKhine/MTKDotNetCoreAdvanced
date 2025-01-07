@@ -1,15 +1,14 @@
-﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Models
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Models;
+
+public static class ChangeModel
 {
-    public static class ChangeModel
+    public static TblBlog Change(this BlogRequestModel requestModel)
     {
-        public static TblBlog Change(this BlogRequestModel requestModel)
+        return new TblBlog
         {
-            return new TblBlog
-            {
-                BlogTitle = requestModel.BlogTitle,
-                BlogAuthor = requestModel.BlogAuthor,
-                BlogContent = requestModel.BlogContent,
-            };
-        }
+            BlogTitle = requestModel.BlogTitle,
+            BlogAuthor = requestModel.BlogAuthor,
+            BlogContent = requestModel.BlogContent,
+        };
     }
 }
