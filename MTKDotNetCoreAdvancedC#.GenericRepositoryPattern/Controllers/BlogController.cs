@@ -74,6 +74,20 @@ public class BlogController : ControllerBase
         await _blogRepository.SaveChangesAsync(cs);
 
         return Ok("Updated Successfully.");
-    }   
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBlogAsync(int id, CancellationToken cs)
+    {
+        var blog = await _blogRepository.Query(b => b.BlogId == id).FirstOrDefaultAsync(cs);
+        if(blog is null)
+        {
+            return NotFound("Blog Id is not found");
+        }
+        _blogRepository.Delete(blog);
+        await _blogRepository.SaveChangesAsync(cs);
+
+        return Ok("Deleted Successfully");
+    }
 
 }
