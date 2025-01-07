@@ -57,4 +57,23 @@ public class BlogController : ControllerBase
         return Ok("Created Successfully.");
     }
 
+    [HttpPut("{id}")]   
+    public async Task<IActionResult> UpdateBlogAsync(int id, [FromBody] BlogRequestModel blog, CancellationToken cs)
+    {
+        var existingBlog = await _blogRepository.Query(b => b.BlogId == id).FirstOrDefaultAsync(cs);
+        if(existingBlog is null)
+        {
+            return NotFound("Blog Id is not found");
+        }
+
+        existingBlog.BlogTitle = blog.BlogTitle;
+        existingBlog.BlogAuthor = blog.BlogAuthor;
+        existingBlog.BlogContent = blog.BlogContent;
+
+        _blogRepository.Update(existingBlog);
+        await _blogRepository.SaveChangesAsync(cs);
+
+        return Ok("Updated Successfully.");
+    }   
+
 }
