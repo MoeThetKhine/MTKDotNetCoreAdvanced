@@ -1,4 +1,6 @@
-﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers;
+﻿using MTKDotNetCoreAdvancedC_.UnitOfWork.Models;
+
+namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -41,5 +43,25 @@ public class BlogController : ControllerBase
     }
 
     #endregion
+
+
+    [HttpPost]
+    public async Task<IActionResult> CreateBlogAsync([FromBody] BlogRequestModel newBlog, CancellationToken cs)
+    {
+        if(newBlog is null)
+        {
+            return BadRequest(new { Message = "Invalid blog data." });
+        }
+
+
+        var blogEntity = newBlog.Change();
+
+        await _unitOfWork.BlogRepository.AddAsync(blogEntity, cs);
+        await _unitOfWork.BlogRepository.SaveChangesAsync(cs);
+
+        return Ok("New Blog is Created");
+    }
+
+
 
 }
