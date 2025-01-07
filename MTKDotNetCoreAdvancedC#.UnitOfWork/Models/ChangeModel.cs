@@ -1,5 +1,7 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Models;
 
+#region ChangeModel
+
 public static class ChangeModel
 {
 
@@ -18,3 +20,5 @@ public static class ChangeModel
     #endregion
 
 }
+
+#endregion
