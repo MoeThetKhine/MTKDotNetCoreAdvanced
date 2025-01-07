@@ -64,4 +64,29 @@ public class BlogController : ControllerBase
 
     #endregion
 
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateBlogAsync(int id, [FromBody] BlogRequestModel updatedBlog, CancellationToken cs)
+    {
+        if (updatedBlog is null)
+        {
+            return BadRequest(new { Message = "Invalid blog data." });
+        }
+
+        var blogEntity = await _unitOfWork.BlogRepository.Query(x => x.BlogId == id).FirstOrDefaultAsync(cs);
+
+        if (blogEntity is null)
+        {
+            return NotFound(new { Message = $"Blog with ID {id} not found." });
+        }
+
+        blogEntity.BlogTitle = updatedBlog.BlogTitle;
+        blogEntity.BlogAuthor = updatedBlog.BlogAuthor;
+        blogEntity.BlogContent = updatedBlog.BlogContent;
+
+        _unitOfWork.BlogRepository.Update(blogEntity);
+        await _unitOfWork.BlogRepository.SaveChangesAsync(cs);
+
+        return Ok(new { Message = "Blog updated successfully.", blogEntity });
+    }
+
 }
