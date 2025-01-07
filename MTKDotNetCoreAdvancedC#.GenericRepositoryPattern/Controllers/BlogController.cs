@@ -1,6 +1,4 @@
-﻿using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Models;
-
-namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers;
+﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

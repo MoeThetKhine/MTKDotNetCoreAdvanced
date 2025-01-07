@@ -5,3 +5,4 @@ global using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance.Reposi
 global using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Dependencies;
 global using Microsoft.AspNetCore.Mvc;
 global using MTKDotNetCoreAdvancedC_.Shared;
+global using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Models;
