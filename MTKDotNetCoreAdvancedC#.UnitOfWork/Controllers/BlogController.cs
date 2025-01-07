@@ -93,4 +93,20 @@ public class BlogController : ControllerBase
 
     #endregion
 
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteBlogAsync(int id, CancellationToken cs)
+    {
+        var blogEntity = await _unitOfWork.BlogRepository.Query(x => x.BlogId == id).FirstOrDefaultAsync(cs);
+
+        if (blogEntity is null)
+        {
+            return NotFound(new { Message = $"Blog with ID {id} not found." });
+        }
+
+        _unitOfWork.BlogRepository.Delete(blogEntity);
+        await _unitOfWork.BlogRepository.SaveChangesAsync(cs);
+
+        return Ok(new { Message = "Blog deleted successfully." });
+    }
+
 }
