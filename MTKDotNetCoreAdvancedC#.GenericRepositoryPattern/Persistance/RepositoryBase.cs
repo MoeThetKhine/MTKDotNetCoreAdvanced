@@ -11,12 +11,6 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class
         _dbSet =  context.Set<T>();
     }
 
-    //public RepositoryBase(AppDbContext context, DbSet<T> dbSet)
-    //{
-    //    _context = context;
-    //    _dbSet = dbSet;
-    //}
-
     #region Add
 
     public void Add(T entity)
