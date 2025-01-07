@@ -39,4 +39,19 @@ public class BlogController : ControllerBase
 
     #endregion
 
+    [HttpPost]
+
+    public async Task<IActionResult> CreateBlogAsync([FromBody] TblBlog blog, CancellationToken cs)
+    {
+        if(blog is null)
+        {
+            return BadRequest("Blog Data is invalid.");
+        }
+
+        await _blogRepository.AddAsync(blog, cs);
+        await _blogRepository.SaveChangesAsync(cs);
+
+        return Ok(blog);
+    }
+
 }
