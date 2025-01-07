@@ -61,6 +61,8 @@ public class BlogController : ControllerBase
 
     #endregion
 
+    #region UpdateBlogAsync
+
     [HttpPut("{id}")]   
     public async Task<IActionResult> UpdateBlogAsync(int id, [FromBody] BlogRequestModel blog, CancellationToken cs)
     {
@@ -79,6 +81,8 @@ public class BlogController : ControllerBase
 
         return Ok("Updated Successfully.");
     }
+
+    #endregion
 
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteBlogAsync(int id, CancellationToken cs)
