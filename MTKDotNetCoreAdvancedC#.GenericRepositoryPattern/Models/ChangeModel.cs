@@ -2,6 +2,8 @@
 
 public static class ChangeModel
 {
+    #region TblBlog Change
+
     public static TblBlog Change(this BlogRequestModel requestModel)
     {
         return new TblBlog
@@ -10,5 +12,7 @@ public static class ChangeModel
             BlogAuthor = requestModel.BlogAuthor,
             BlogContent = requestModel.BlogContent,
         };
-    }   
+    }
+
+    #endregion
 }
