@@ -1,5 +1,4 @@
 ﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Persistance;
-
 public interface IRepositoryBase<T> where T : class
 {
     IQueryable<T> Query(Expression<Func<T, bool>>? expression = null);
