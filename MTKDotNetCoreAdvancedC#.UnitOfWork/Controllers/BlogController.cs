@@ -1,6 +1,4 @@
-﻿using MTKDotNetCoreAdvancedC_.UnitOfWork.Models;
-
-namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers;
+﻿namespace MTKDotNetCoreAdvancedC_.UnitOfWork.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
