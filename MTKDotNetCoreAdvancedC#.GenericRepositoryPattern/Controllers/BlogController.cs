@@ -1,4 +1,6 @@
-﻿namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers;
+﻿using MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Models;
+
+namespace MTKDotNetCoreAdvancedC_.GenericRepositoryPattern.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -41,17 +43,18 @@ public class BlogController : ControllerBase
 
     [HttpPost]
 
-    public async Task<IActionResult> CreateBlogAsync([FromBody] TblBlog blog, CancellationToken cs)
+    public async Task<IActionResult> CreateBlogAsync([FromBody] BlogRequestModel blog, CancellationToken cs)
     {
         if(blog is null)
         {
             return BadRequest("Blog Data is invalid.");
         }
 
-        await _blogRepository.AddAsync(blog, cs);
+        var blogEntity = blog.Change();
+        await _blogRepository.AddAsync(blogEntity, cs);
         await _blogRepository.SaveChangesAsync(cs);
 
-        return Ok(blog);
+        return Ok("Created Successfully.");
     }
 
 }
